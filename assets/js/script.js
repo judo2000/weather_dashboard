@@ -1,5 +1,5 @@
 // base url for forecast api
-const baseUrl = 'http://api.openweathermap.org/data/2.5/forecast?cnt=7&units=imperial&appid=9094815cf69de4af2049665b33b7f363'
+const baseUrl = 'https://api.openweathermap.org/data/2.5/forecast?cnt=7&units=imperial&appid=9094815cf69de4af2049665b33b7f363'
 // target form 
 const formEl = $('#city-form');
 // target city name div
