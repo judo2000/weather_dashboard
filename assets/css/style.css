@@ -1,7 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.7;
+    background-color: rgb(80, 78, 78);
+    color: #fff;
+}
+
+header {
+    background-color:rgb(25, 6, 110)
+
+}
 .show {
     display: block;
 }
 
 .hide {
     display: none;
+}
+
+
+.green {
+    background-color: green;
+}
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orange
+}
+
+.red {
+    background-color: red;
+}
+
+.card {
+    background-color: rgb(25, 6, 110);
+    margin: 10px;
+}
+
+.city-btn {
+    width: 100%;
 }
