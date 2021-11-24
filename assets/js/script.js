@@ -23,6 +23,7 @@ let q = '';
 loadCities();
 
 function loadCities() {
+  let storedCities = JSON.parse(localStorage.getItem("cities"));
   historyEl.text('');
   if (storedCities) {
     console.log(storedCities);
@@ -76,16 +77,7 @@ function formHandler(event) {
       let lat = data[0].lat;
       let lon = data[0].lon;
       
-      if (storedCities !== null) {
-        cities = storedCities;
-        if (!cities.includes(q)) {
-          cities.push(q);
-        }
-      } else {
-        cities.push(q);
-      }
-      localStorage.setItem("cities", JSON.stringify(cities));
-      loadCities();
+      
       
       //build the url
       let requestUrl = `${baseUrl}&lon=${lon}&lat=${lat}`;
@@ -96,6 +88,18 @@ function formHandler(event) {
           return response.json();
         })
         .then(function (data) {
+
+          if (storedCities !== null) {
+            cities = storedCities;
+            if (!cities.includes(q)) {
+              cities.push(q);
+            }
+          } else {
+            cities.push(q);
+          }
+          localStorage.setItem("cities", JSON.stringify(cities));
+          cities = [];
+          loadCities();
            //console.log(data.daily);
            if (data.current.uvi <= 2) {
             uviColor = "green"
