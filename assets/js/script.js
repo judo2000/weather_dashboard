@@ -17,14 +17,14 @@ let historyEl = $('#history');
 // create empty cities array
 let cities = [];
 // get stored cities from local storage
-let storedCities = JSON.parse(localStorage.getItem("cities"));
+let storedCities = ''
 let q = '';
 
 loadCities();
 
 function loadCities() {
-  let storedCities = JSON.parse(localStorage.getItem("cities"));
   historyEl.text('');
+  storedCities = JSON.parse(localStorage.getItem("cities"));
   if (storedCities) {
     console.log(storedCities);
     for (let i = 0; i < storedCities.length; i++) {
@@ -36,36 +36,25 @@ function loadCities() {
   }
 }
 
-historyEl.on('click', function(event) {
-  let q = event.target.getAttribute('data-q');
-  formEl.attr('data-q', q);
- formEl.submit();
-})
-
 function formHandler(event) {
   event.preventDefault();
-  console.log(event);
   // clear any dta from weatherCardsEl
   currConditionsEl.text('');
   weatherCardsEl.text('');
   currConditionsEl.removeClass('border border-dark border-2')
   
+  // check to see if the submit came from a button or the input form
+  // if a button get the data attribute, q else get it from the form
   if (formEl.attr('data-q')) {
-    //console.log(formEl.attr('data-q'));
     q = formEl.attr('data-q')
-    console.log(q);
+    // clear the button attribute so it will not persist if the 
+    // next search is from the form.
+    formEl.attr('data-q', '');
   } else {
     q = $('input[name="city-input"]').val().trim();
   }
   
-  if (!q) {
-    return;
-  }
-
-  console.log(q);
-  
   let cityRequestUrl = `${getLocUrl}&q=${q}`;
-
   fetch(cityRequestUrl)
     .then(function (response) {
       // When this request is made, get the response and check to see if it went well
@@ -77,8 +66,6 @@ function formHandler(event) {
       let lat = data[0].lat;
       let lon = data[0].lon;
       
-      
-      
       //build the url
       let requestUrl = `${baseUrl}&lon=${lon}&lat=${lat}`;
       fetch(requestUrl)
@@ -88,7 +75,7 @@ function formHandler(event) {
           return response.json();
         })
         .then(function (data) {
-
+          storedCities = JSON.parse(localStorage.getItem("cities"));
           if (storedCities !== null) {
             cities = storedCities;
             if (!cities.includes(q)) {
@@ -97,6 +84,7 @@ function formHandler(event) {
           } else {
             cities.push(q);
           }
+  
           localStorage.setItem("cities", JSON.stringify(cities));
           cities = [];
           loadCities();
@@ -124,10 +112,9 @@ function formHandler(event) {
           
            cityNameEl.text(`${q} (${moment().format("MM/D/YYYY")})`);
            currConditionsEl.append(currWeather);
-           //weatherCardsEl.removeClass("hide");
-           //weatherCardsEl.addClass("show");
+           
+           // build cards to display 5-day forecast
            for (let i = 0; i < 5; i++) {
-             //console.log(data.list[i].main.temp_max);
              let currDay = moment().add(i, 'days').format("MM/D/YYYY");
               console.log(data.daily[i].temp.max);
               let weatherBlock = $(
@@ -149,7 +136,23 @@ function formHandler(event) {
           };
         })
       })
+      .catch(function(err) {
+        let searchError = $(
+          `<h4 class="bg-danger text-dark">Sorry, we were unable to find, ${q}.  Please check
+          the spelling and try again.</h4>`
+        )
+        weatherCardsEl.append(searchError);
+        $('input[name="city-input"]').val('');
+    })
 }
 
 // click handler for input
 formEl.on('submit', formHandler);
+
+// click handler for history buttons
+historyEl.on('click', function(event) {
+  let q = event.target.getAttribute('data-q');
+  event.stopPropagation();
+  formEl.attr('data-q', q);
+ formEl.submit();
+})

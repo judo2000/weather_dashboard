@@ -11,6 +11,7 @@ body {
     line-height: 1.7;
     background-color: rgb(80, 78, 78);
     color: #fff;
+    border: solid black;
 }
 
 header {
