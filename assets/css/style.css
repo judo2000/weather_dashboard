@@ -11,7 +11,6 @@ body {
     line-height: 1.7;
     background-color: rgb(80, 78, 78);
     color: #fff;
-    border: solid black;
 }
 
 header {
@@ -49,4 +48,19 @@ header {
 
 .city-btn {
     width: 100%;
+}
+
+footer {
+    background-color:rgb(25, 6, 110);
+    color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer, a {
+    color: #fff;
+}
+
+footer .about_me, a:hover {
+    color: gray;
 }
