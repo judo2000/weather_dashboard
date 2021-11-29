@@ -88,7 +88,6 @@ function formHandler(event) {
           localStorage.setItem("cities", JSON.stringify(cities));
           cities = [];
           loadCities();
-           //console.log(data.daily);
            if (data.current.uvi <= 2) {
             uviColor = "green"
           } else if (data.current.uvi < 2 && data.current.uvi <= 5) {
@@ -105,7 +104,6 @@ function formHandler(event) {
               <b>Humidity:</b> ${Math.round(data.current.humidity)} % <br />
               <b>UV Index:</b> <span class="${uviColor} text-white px-2">${data.current.uvi}</span>`
             );
-           //console.log(currWeather);
            currConditionsEl.addClass('border border-dark border-2')
            // add city name to the page
            //cityNameEl.text('test');
@@ -116,7 +114,6 @@ function formHandler(event) {
            // build cards to display 5-day forecast
            for (let i = 0; i < 5; i++) {
              let currDay = moment().add(i, 'days').format("MM/D/YYYY");
-              console.log(data.daily[i].temp.max);
               let weatherBlock = $(
                 `<div class="card text-white" style="width: 11rem;">
                     <div class="card-body">
