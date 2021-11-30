@@ -88,7 +88,7 @@ function formHandler(event) {
           localStorage.setItem("cities", JSON.stringify(cities));
           cities = [];
           loadCities();
-           if (data.current.uvi <= 2) {
+          if (data.current.uvi <= 2) {
             uviColor = "green"
           } else if (data.current.uvi < 2 && data.current.uvi <= 5) {
             uviColor = "yellow"
@@ -98,37 +98,37 @@ function formHandler(event) {
             uviColor = "red"
           };
 
-            let currWeather = (
-              `<b>Temp:</b> ${Math.round(data.current.temp)}&deg; F <br />
-              <b>Wind:</b> ${Math.round(data.current.wind_speed)} mpg <br />
-              <b>Humidity:</b> ${Math.round(data.current.humidity)} % <br />
-              <b>UV Index:</b> <span class="${uviColor} text-white px-2">${data.current.uvi}</span>`
-            );
-           currConditionsEl.addClass('border border-dark border-2')
-           // add city name to the page
-           //cityNameEl.text('test');
+          let currWeather = (
+            `<b>Temp:</b> ${Math.round(data.current.temp)}&deg; F <br />
+            <b>Wind:</b> ${Math.round(data.current.wind_speed)} mpg <br />
+            <b>Humidity:</b> ${Math.round(data.current.humidity)} % <br />
+            <b>UV Index:</b> <span class="${uviColor} text-white px-2">${data.current.uvi}</span>`
+          );
+          currConditionsEl.addClass('border border-dark border-2')
+          // add city name to the page
+          //cityNameEl.text('test');
           
-           cityNameEl.text(`${q} (${moment().format("MM/D/YYYY")})`);
-           currConditionsEl.append(currWeather);
+          cityNameEl.text(`${q} (${moment().format("MM/D/YYYY")})`);
+          currConditionsEl.append(currWeather);
            
-           // build cards to display 5-day forecast
-           for (let i = 0; i < 5; i++) {
-             let currDay = moment().add(i, 'days').format("MM/D/YYYY");
-              let weatherBlock = $(
-                `<div class="card text-white" style="width: 11rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">${currDay}</h5>
-                      <p class="card-text">
-                        <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png"/> <br />
-                        <b>Hi:</b> ${Math.round(data.daily[i].temp.max)}&deg; F <br />
-                        <b>Low:</b> ${Math.round(data.daily[i].temp.min)}&deg; F <br />
-                      </p>
-                    </div>
-                  </div>` 
-             );
-             // clear input form
-             $('input[name="city-input"]').val('');
-             //append weatherBlock to Weather cards element
+          // build cards to display 5-day forecast
+          for (let i = 0; i < 5; i++) {
+            let currDay = moment().add(i, 'days').format("MM/D/YYYY");
+            let weatherBlock = $(
+              `<div class="card text-white" style="width: 11rem;">
+                <div class="card-body">
+                <h5 class="card-title">${currDay}</h5>
+                  <p class="card-text">
+                    <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png"/> <br />
+                    <b>Hi:</b> ${Math.round(data.daily[i].temp.max)}&deg; F <br />
+                    <b>Low:</b> ${Math.round(data.daily[i].temp.min)}&deg; F <br />
+                  </p>
+                </div>
+              </div>` 
+            );
+            // clear input form
+            $('input[name="city-input"]').val('');
+            //append weatherBlock to Weather cards element
             weatherCardsEl.append(weatherBlock);
           };
         })
@@ -151,5 +151,5 @@ historyEl.on('click', function(event) {
   let q = event.target.getAttribute('data-q');
   event.stopPropagation();
   formEl.attr('data-q', q);
- formEl.submit();
+  formEl.submit();
 })
