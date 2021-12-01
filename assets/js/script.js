@@ -97,9 +97,10 @@ function formHandler(event) {
           } else {
             uviColor = "purple"
           };
-
+          console.log(data.current)
           let currWeather = (
-            `<b>Temp:</b> ${Math.round(data.current.temp)}&deg; F <br />
+            `<b>${q} (${moment().format("MM/D/YYYY")})</b> <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png"/><br />
+            <b>Temp:</b> ${Math.round(data.current.temp)}&deg; F <br />
             <b>Wind:</b> ${Math.round(data.current.wind_speed)} mpg <br />
             <b>Humidity:</b> ${Math.round(data.current.humidity)} % <br />
             <b>UV Index:</b> <span class="${uviColor} text-white px-2">${data.current.uvi}</span>`
@@ -134,10 +135,17 @@ function formHandler(event) {
         })
       })
       .catch(function(err) {
-        let searchError = $(
-          `<h4 class="bg-danger text-dark">Sorry, we were unable to find, ${q}.  Please check
-          the spelling and try again.</h4>`
-        )
+        let searchError;
+        if (q === '') {
+          searchError = $(
+            `<h4 class="bg-danger text-dark">Please enter a city name.</h4>`
+          )
+        } else {
+          searchError = $(
+            `<h4 class="bg-danger text-dark">Sorry, we were unable to find, ${q}.  Please check
+            the spelling and try again.</h4>`
+          )
+        }
         weatherCardsEl.append(searchError);
         $('input[name="city-input"]').val('');
     })
