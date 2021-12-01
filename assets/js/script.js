@@ -26,7 +26,6 @@ function loadCities() {
   historyEl.text('');
   storedCities = JSON.parse(localStorage.getItem("cities"));
   if (storedCities) {
-    console.log(storedCities);
     for (let i = 0; i < storedCities.length; i++) {
       let cityBtn = $(
         `<button id="${i}" data-q="${storedCities[i]}" class="btn btn-primary city-btn my-2">${storedCities[i]}</button><br />`
@@ -62,7 +61,6 @@ function formHandler(event) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       let lat = data[0].lat;
       let lon = data[0].lon;
       
