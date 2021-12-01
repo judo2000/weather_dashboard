@@ -28,7 +28,7 @@ Another feature of the app is that it stores selected cities in local storage an
 I also used the Moments.js api to format and display the current day as well as to display the dates for the 5-day forecast.
 
 If a user searches for a city that is not in the database or enters anything other than a city name, the app will display an error with a red background informing the user that the information entered is invalid.
-![error-screenshot](assets/images/weather_dashboard_error_screenshot.png)
+[![Product Name Screen Shot][error-screenshot]]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -43,17 +43,17 @@ If a user searches for a city that is not in the database or enters anything oth
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact
-Stephen Moore - judo2000@comcast.net
+<a href="https://linktr.ee/stephensmoore" target="_blank"></a>Stephen Moore</a>
 
-Project Link: [The Day Planner Page](https://judo2000.github.io/week5_day_planner/)
+Project Link: [The Day Planner Page](https://judo2000.github.io/week6_weather_dashboard/)
 
-Github Repo Link: [Github repository ](https://github.com/judo2000/week5_day_planner)
+Github Repo Link: [Github repository ](https://github.com/judo2000/week6_weather_dashboard)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+[product-name]: The-Weather-Dashboard
 [product-screenshot]: assets/images/weather_dashboard_screenshot.png
-
+[error-screenshot]: assets/images/weather_dashboard_error_screenshot.png
 [Bootstrap]: https://getbootstrap.com/
 [jQuery]: https://jquery.com/
 [Moments.js]: https://momentjs.com/
