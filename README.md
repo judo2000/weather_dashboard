@@ -5,23 +5,14 @@ This repository contains the code for a deployed web app that fetches cocktail r
 
 
 ## Table of Contents
-* [Contact](#contact)
-* [Technologies](#tech)
-* [Contact](#contact)
+* [Document Organization](#markdown-header-document-organization)
 
-
-<a name="contact"></a>
 ## Contact
-<a href="https://linktr.ee/stephensmoore" target="_blank">Stephen Moore</a><br>
-Project Link: [The Weather Dashboard Page](https://judo2000.github.io/week6_weather_dashboard/)<br>
-Github Repo Link: [Github repository ](https://github.com/judo2000/week6_weather_dashboard/)<br>
-<a name="tech"></a>
+
 ## Technologies
-  HTML
-  <br>CSS
-  <br>JavaScript
-  <br>jQuery
-## Instructions
+  <br><br><br><br><br><br>
+  
+## Document Organization
 
 
 
