@@ -94,8 +94,10 @@ function formHandler(event) {
             uviColor = "yellow"
           } else if (data.current.uvi < 5 && data.current.uvi <= 7) {
             uviColor ="orange"
-          } else {
+          } else if (data.current.uvi < 7 && data.current.uvi <= 10) {
             uviColor = "red"
+          } else {
+            uviColor = "purple"
           };
 
           let currWeather = (

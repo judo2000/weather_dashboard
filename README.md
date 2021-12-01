@@ -6,30 +6,22 @@ This repository contains the code for a deployed web app that fetches cocktail r
 
 ## Table of Contents
 * [Contact](#contact)
-* [Technologies](#technologies)  
-* [Instructions](#instructions)
+* [Technologies](#tech)
+* [Contact](#contact)
 
+
+<a name="contact"></a>
 ## Contact
-<a href="https://linktr.ee/stephensmoore">Stephen Moore</a>
-
-Project Link: [The Day Planner Page](https://judo2000.github.io/week5_day_planner/)
-
-Github Repo Link: [Github repository ](https://github.com/judo2000/week6_weather_dashboard)
-
+<a href="https://linktr.ee/stephensmoore" target="_blank">Stephen Moore</a><br>
+Project Link: [The Weather Dashboard Page](https://judo2000.github.io/week6_weather_dashboard/)<br>
+Github Repo Link: [Github repository ](https://github.com/judo2000/week6_weather_dashboard/)<br>
+<a name="tech"></a>
 ## Technologies
-* HTML
-* CSS
-* [Open Weather Map API]
-* JavaScript
-* [jQuery]
-* [Bootstrap]
-* [Moments.js]
+  HTML
+  <br>CSS
+  <br>JavaScript
+  <br>jQuery
 ## Instructions
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
-[product-screenshot]: project_screenshot.png
-[Bootstrap]: https://getbootstrap.com/
-[jQuery]: https://jquery.com/
-[Moments.js]: https://momentjs.com/
-[Open Weather Map API]: https://openweathermap.org/api
+
