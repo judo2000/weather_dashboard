@@ -5,13 +5,13 @@ This repository contains the code for a deployed web app that fetches cocktail r
 
 
 ## Table of Contents
-* [Document Organization](#markdown-header-document-organization)
+* [Document Organization](#document-organization)
 
 ## Contact
 
 ## Technologies
   <br><br><br><br><br><br>
-  
+
 ## Document Organization
 
 
