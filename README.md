@@ -17,6 +17,8 @@ This repository contains the code for a deployed web app that fetches current an
 
 
 ## About
+[![Product Name Screen Shot][product-screenshot]](https://judo2000.github.io/week6_weather_dashboard/)
+
 The Weather Dashboard app fetches data from the OpenWeatherMap api.  The user enteres a city and the app fetches the data and displays the current weather, including current temperatur, wind speed, humidity and UV index.  The UV index has a colored background color of green for 0-2, yellow for uvi of 2.1-5, orange for uvi of 5.1-7, red for a uvi of 7.1-10 and purple for 10.1 and above.
 
 The app also displayes the selected cities' 5-day forcaset with hi and low temperatures, and an icon for weather conditions.
@@ -25,7 +27,8 @@ Another feature of the app is that it stores selected cities in local storage an
 
 I also used the Moments.js api to format and display the current day as well as to display the dates for the 5-day forecast.
 
-[![Product Name Screen Shot][product-screenshot]](https://judo2000.github.io/week6_weather_dashboard/)
+If a user searches for a city that is not in the database or enters anything other than a city name, the app will display an error with a red background informing the user that the information entered is invalid.
+![error-screenshot](assets/images/weather_dashboard_error_screenshot.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -50,6 +53,7 @@ Github Repo Link: [Github repository ](https://github.com/judo2000/week5_day_pla
 
 
 [product-screenshot]: assets/images/weather_dashboard_screenshot.png
+
 [Bootstrap]: https://getbootstrap.com/
 [jQuery]: https://jquery.com/
 [Moments.js]: https://momentjs.com/
