@@ -28,7 +28,7 @@ Another feature of the app is that it stores selected cities in local storage an
 I also used the Moments.js api to format and display the current day as well as to display the dates for the 5-day forecast.
 
 If a user searches for a city that is not in the database or enters anything other than a city name, the app will display an error with a red background informing the user that the information entered is invalid.
-[![Product Name Screen Shot][error-screenshot]]
+![error-screenshot]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
