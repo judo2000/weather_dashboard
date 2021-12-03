@@ -23,7 +23,7 @@ The Weather Dashboard app fetches data from the OpenWeatherMap api.  The user en
 
 The app also displayes the selected cities' 5-day forcaset with hi and low temperatures, and an icon for weather conditions.
 
-Another feature of the app is that it stores selected cities in local storage and displays them as button under the search form. If you click on a city's button it will disply the information just as if the city were entered into the search field.
+Another feature of the app is that it stores selected cities in local storage and displays them as button under the search form. If you click on a city's button it will disply the information just as if the city were entered into the search field.  I found a function on [Stack OverFlow](https://stackoverflow.com) to convert the first letter in the city names entered which made it easier to check if a city was already stored in the cities object.
 
 I also used the Moments.js api to format and display the current day as well as to display the dates for the 5-day forecast.
 
