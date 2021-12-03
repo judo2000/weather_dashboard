@@ -35,6 +35,26 @@ function loadCities() {
   }
 }
 
+function titleCase(str) {
+  var splitStr = str.toLowerCase().split(' ');
+  for (var i = 0; i < splitStr.length; i++) {
+      // You do not need to check if i is larger than splitStr length, as your for does that for you
+      // Assign it back to the array
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+  }
+  // Directly return the joined string
+  return splitStr.join(' '); 
+}
+
+// program to convert first letter of a string to uppercase
+function capitalizeFirstLetter(str) {
+
+  // converting first letter to uppercase
+  const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+
+  return capitalized;
+}
+
 function formHandler(event) {
   event.preventDefault();
   // clear any dta from weatherCardsEl
@@ -45,12 +65,12 @@ function formHandler(event) {
   // check to see if the submit came from a button or the input form
   // if a button get the data attribute, q else get it from the form
   if (formEl.attr('data-q')) {
-    q = formEl.attr('data-q')
+    q = titleCase(formEl.attr('data-q'));
     // clear the button attribute so it will not persist if the 
     // next search is from the form.
     formEl.attr('data-q', '');
   } else {
-    q = $('input[name="city-input"]').val().trim();
+    q = titleCase($('input[name="city-input"]').val().trim());
   }
   
   let cityRequestUrl = `${getLocUrl}&q=${q}`;
