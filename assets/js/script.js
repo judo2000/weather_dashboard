@@ -97,7 +97,6 @@ function formHandler(event) {
           } else {
             uviColor = "purple"
           };
-          console.log(data.current)
           let currWeather = (
             `<b>${q} (${moment().format("MM/D/YYYY")})</b> <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png"/><br />
             <b>Temp:</b> ${Math.round(data.current.temp)}&deg; F <br />
